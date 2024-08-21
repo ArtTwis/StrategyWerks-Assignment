@@ -9,17 +9,6 @@
     "start": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
     "prepare": "husky"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "* (js, json, css, md, html}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
-  },
   "keywords": [
     "Node.Js",
     "MongoDB",
