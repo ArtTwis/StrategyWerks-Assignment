@@ -7,11 +7,11 @@ import { Movie } from "../models/movie.model.js";
 
 export const getAllMovies = asyncHandler(async (req, res) => {
   try {
-    let page = Number(req.query.page) || 1;
+    const page = Number(req.query.page) || 1;
 
-    let limit = Number(req.query.limit) || 10;
+    const limit = Number(req.query.limit) || 10;
 
-    let skip = (page - 1) * limit;
+    const skip = (page - 1) * limit;
 
     const movieResponse = await Movie.find().limit(limit).skip(skip);
 
@@ -29,6 +29,6 @@ export const getAllMovies = asyncHandler(async (req, res) => {
   } catch (error) {
     return res
       .status(417)
-      .json(new ApiError(417, errorMessages.internalServerError));
+      .json(new ApiError(417, errorMessages.internalServerError, error));
   }
 });
