@@ -5,3 +5,4 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/route/movies?limit=10&page=2\",\"status\":\"201\",\"responseTime\":\"11160.944\"}","timestamp":"2024-08-21T20:13:38.067Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/route/movies?limit=10&page=2\",\"status\":\"-\",\"responseTime\":\"-\"}","timestamp":"2024-08-21T20:13:46.691Z"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/route/movies?limit=10&page=1\",\"status\":\"201\",\"responseTime\":\"70.579\"}","timestamp":"2024-08-21T20:19:19.275Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/route/movies?limit=10&page=1\",\"status\":\"201\",\"responseTime\":\"71.781\"}","timestamp":"2024-08-21T21:27:53.739Z"}
