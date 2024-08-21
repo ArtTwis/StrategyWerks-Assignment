@@ -1,1 +1,3 @@
-export const successMessages = {};
+export const successMessages = {
+  recordsRetrieved: "Record retrieved successfully..",
+};

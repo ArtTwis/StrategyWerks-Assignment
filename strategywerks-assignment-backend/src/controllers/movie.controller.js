@@ -7,9 +7,26 @@ import { Movie } from "../models/movie.model.js";
 
 export const getAllMovies = asyncHandler(async (req, res) => {
   try {
-    return res.status(201).json(new ApiResponse(201, "null", "Success"));
+    let page = Number(req.query.page) || 1;
+
+    let limit = Number(req.query.limit) || 10;
+
+    let skip = (page - 1) * limit;
+
+    const movieResponse = await Movie.find().limit(limit).skip(skip);
+
+    if (!movieResponse) {
+      return res
+        .status(500)
+        .json(new ApiError(500, errorMessages.failedToRetrievedRecords));
+    }
+
+    return res
+      .status(201)
+      .json(
+        new ApiResponse(201, movieResponse, successMessages.recordsRetrieved)
+      );
   } catch (error) {
-    console.log("error :>>", error);
     return res
       .status(417)
       .json(new ApiError(417, errorMessages.internalServerError));
