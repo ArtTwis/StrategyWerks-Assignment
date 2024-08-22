@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { API_URL, api_data_limit } from "../constant/constant.js";
 import MovieComponent from "./MovieComponent.jsx";
 import { debounce } from "../utils/debouce.js";
+import { selectPage } from "../store/slices/appSelector.js";
+import { appActions } from "../store/slices/appSlice.js";
 
 const Home = () => {
-  const [card, setCard] = useState([]);
-  const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
+  const page = useSelector(selectPage);
+  const pageRef = useRef(page);
 
   const getCardData = async () => {
     const res = await fetch(
       `${API_URL}?_limit=${api_data_limit}&_page=${page}`
     );
     const { data } = await res.json();
-    setCard((prevData) => [...prevData, ...data]);
+    dispatch(appActions.addMovies(data));
   };
 
   const handleInfiniteScroll = debounce(() => {
@@ -21,7 +25,7 @@ const Home = () => {
         window.innerHeight + document.documentElement.scrollTop + 1 >=
         document.documentElement.scrollHeight
       ) {
-        setPage((prevPage) => prevPage + 1);
+        dispatch(appActions.updatePage(pageRef.current + 1));
       }
     } catch (error) {
       console.log("error :>> ", error);
@@ -29,6 +33,7 @@ const Home = () => {
   });
 
   useEffect(() => {
+    pageRef.current = page;
     getCardData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
@@ -44,7 +49,7 @@ const Home = () => {
 
   return (
     <div>
-      <MovieComponent movieInfo={card} />
+      <MovieComponent />
     </div>
   );
 };
