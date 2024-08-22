@@ -36,8 +36,20 @@ To get started with this project, follow these steps:
     npm run start
     ```
 
+    The app will be available at http://localhost:3000.
+
+## Redux Toolkit
+
+Redux Toolkit is used for managing the state of the application. It provides a simpler and more efficient way to write Redux code by reducing boilerplate and providing useful utilities.
+
 ## API Documentation
 
 ### Routes
 
+The app makes API calls to a local server running on port 8000. The API endpoint is :
+
 #### GET http://localhost:8000/api/v1/route/movies?\_limit=6&\_page=1
+
+## Contributing
+
+We welcome contributions to the project. If you would like to contribute, please fork the repository and submit a pull request.
