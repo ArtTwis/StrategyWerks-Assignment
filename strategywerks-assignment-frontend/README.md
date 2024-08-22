@@ -8,9 +8,7 @@ Problem Statement: Advanced Front-End Development with Virtual Scrolling
 
 This is a React application that demonstrates the use of infinite scroll functionality. The app uses Redux Toolkit for state management, makes API calls to a local server running on port 8000, and applies animations to cards using CSS.
 
-## Technologies Used
-
-To get started with this project, follow these steps:
+### To get started with this project, follow these steps:
 
 1.  **Clone the Repository**
 
