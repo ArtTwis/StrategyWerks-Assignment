@@ -16,7 +16,7 @@ const appSlice = createSlice({
       state.movies = [...state.movies, ...payload];
     },
     toggleLoading: (state, action) => {
-      state.loading = !state.loading;
+      state.loading = action.payload;
     },
     updatePage: (state, action) => {
       state.page = action.payload;
