@@ -58,7 +58,7 @@ To get started with this project, follow these steps:
 
 ### Routes
 
-#### GET http://localhost:8000/api/v1/route/movies?limit=10&page=1
+#### GET http://localhost:8000/api/v1/route/movies?\_limit=6&\_page=1
 
 - Description: Retrieves a list of movies from the database with optional pagination.
 - Route: `/api/v1/route/movies`
