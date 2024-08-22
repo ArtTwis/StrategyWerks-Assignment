@@ -7,7 +7,7 @@ const MovieCard = ({ myData }) => {
   const { title, fullplot } = myData;
 
   return (
-    <div className="card box">
+    <div className="card box block">
       <div className="card-info">
         <div className="imageContainer" style={{ background: randomColor() }}>
           <img src={postersArray[randomNumber()]} alt="Poster" />
